@@ -19,3 +19,6 @@ The function download_cif_parquet takes CIF files from a pre-download Materials 
 
 ## Examples
 Examples of usage for these functions can be found in the two additional python files.
+
+## Credits
+The purpose of this script is primarily to convert data into a format usable by [CGCNN](https://github.com/txie-93/cgcnn), so credit for the format and usage goes to the authors of that project.
