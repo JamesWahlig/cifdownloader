@@ -1,6 +1,6 @@
 import download_cif as dc
 import sys
-import subprocess
+import warnings
 
 def ordering_to_float(ordering: str) -> float:
     if(ordering == "Unknown"): return None
@@ -8,5 +8,5 @@ def ordering_to_float(ordering: str) -> float:
     if(ordering == "NM"): val = 0
     return val
 
-dc.download_cifs(sys.argv[2:], sys.argv[1], "ordering", ordering_to_float)
-subprocess.call(["python", "predict.py", "model_best.pth.tar", sys.argv[1]])
+warnings.filterwarnings(UserWarning)
+dc.cifs_from_parquet(sys.argv[1], sys.argv[2], "ordering", ordering_to_float)
